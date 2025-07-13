@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "pages/about_us", as: "about"
   get "pages/contact_us", as: "contact"
   get "pages/privacy_policy", as: "privacy"
-  get "/pages/privacy_policy" => "pages#terms_and_conditions", as: "terms"
+  get "/pages/terms_and_conditions", as: "terms"
   root 'home#index' # this 'root' sets the / URL
 
 

@@ -1,10 +1,4 @@
 <h1>Pages#about_us</h1>
 <p>Find me in app/views/pages/about_us.html.erb</p>
 
-<%= link_to 'About Us', url_for(controller: :pages, action: :about_us), target: '_blank' %> | 
-
-<%= link_to 'Contact Us', url_for(controller: :pages, action: :contact_us), target: '_blank' %> |
-
-<%= link_to 'Privacy Policy', url_for(controller: :pages, action: :privacy_policy), target: '_blank' %> |
-
-<%= link_to 'Terms of Service', url_for(controller: :pages, action: :terms_and_conditions), target: '_blank' %>
+<%= render 'shared/links' %>
