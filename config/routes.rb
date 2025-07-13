@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :employees, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  
   get "pages/about_us", as: "about"
   get "pages/contact_us", as: "contact"
   get "pages/privacy_policy", as: "privacy"
