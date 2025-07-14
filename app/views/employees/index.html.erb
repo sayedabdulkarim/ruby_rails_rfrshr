@@ -1,29 +1,35 @@
 
 <%= link_to 'New Employee', new_employee_path, class: 'my-5' %>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Pincode</th>
-      <th>Address</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @employees.each do |employee| %>
+<div class="mt-5">
+
+  <%= flash[:notice] %>
+
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= employee.employee_name(employee) %></td>
-        <td><%= employee.personal_email %></td>
-        <td><%= employee.city %></td>
-        <td><%= employee.state %></td>
-        <td><%= employee.country %></td>
-        <td><%= employee.pincode %></td>
-        <td><%= "#{employee.address_line_1} #{employee.address_line_2}" %></td>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Pincode</th>
+        <th>Address</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= employee.employee_name(employee) %></td>
+          <td><%= employee.personal_email %></td>
+          <td><%= employee.city %></td>
+          <td><%= employee.state %></td>
+          <td><%= employee.country %></td>
+          <td><%= employee.pincode %></td>
+          <td><%= "#{employee.address_line_1} #{employee.address_line_2}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
