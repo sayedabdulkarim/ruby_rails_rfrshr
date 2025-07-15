@@ -1,1 +1,5 @@
-rails routes | grep employees
+rails routes | grep employees - to grab all the methods for a particular controller
+
+rails g model document name doc_type employee:references - to create a controller with keys/ foreign keys 
+
+rails c - for rail terminal
