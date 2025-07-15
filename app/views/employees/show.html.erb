@@ -1,0 +1,29 @@
+<h1>Employee Details</h1>
+
+<p><strong>Name:</strong>
+  <%= @employee.first_name %>
+    <%= @employee.middle_name %>
+      <%= @employee.last_name %>
+</p>
+<p><strong>Email:</strong>
+  <%= @employee.personal_email %>
+</p>
+<p><strong>City:</strong>
+  <%= @employee.city %>
+</p>
+<p><strong>State:</strong>
+  <%= @employee.state %>
+</p>
+<p><strong>Country:</strong>
+  <%= @employee.country %>
+</p>
+<p><strong>Pincode:</strong>
+  <%= @employee.pincode %>
+</p>
+<p><strong>Address:</strong>
+  <%= @employee.address_line_1 %>
+    <%= @employee.address_line_2 %>
+</p>
+
+<%= link_to 'Edit Employee' , edit_employee_path(@employee), class: 'btn btn-primary' %>
+  <%= link_to 'Back to Employees' , employees_path, class: 'btn btn-secondary' %>
