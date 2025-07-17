@@ -29,7 +29,8 @@
 
           <div class="form-group">
             <%= form.label :doc_type, class: 'mb-2' %>
-              <%= form.text_field :doc_type, class: 'form-control form-control-lg rounded-0' %>
+              <%= form.select :doc_type, Document::DOC_TYPES, { prompt: 'Select Document Type' },
+                class: 'form-control form-control-lg rounded-0' %>
                 <% document.errors.full_messages_for(:doc_type).each do |message| %>
                   <p class="text-danger">
                     <%= message %>
