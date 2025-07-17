@@ -25,5 +25,28 @@
     <%= @employee.address_line_2 %>
 </p>
 
-<%= link_to 'Edit Employee' , edit_employee_path(@employee), class: 'btn btn-primary' %>
-  <%= link_to 'Back to Employees' , employees_path, class: 'btn btn-secondary' %>
+<% @employee.documents.each do |document| %>
+  <div class="row my-5">
+    <div class="col-lg-4" style="border: 1px solid red;">
+      <% if document.image.attached? && document.image.content_type.starts_with?("image/") %>
+        <%= image_tag document.image, class: "img-thumbnail" %>
+          <% end %>
+    </div>
+    <div class="col-lg-4 my-5">
+      <p><strong>Document Name:</strong>
+        <%= document.name %>
+      </p>
+      <p><strong>Document Type:</strong>
+        <%= document.doc_type %>
+      </p>
+      <p><strong>Created At:</strong>
+        <%= document.created_at.strftime("%B %d, %Y") %>
+      </p>
+      <p><strong>Updated At:</strong>
+        <%= document.updated_at.strftime("%B %d, %Y") %>
+      </p>
+    </div>
+    <% end %>
+
+      <%= link_to 'Edit Employee' , edit_employee_path(@employee), class: 'btn btn-primary' %>
+        <%= link_to 'Back to Employees' , employees_path, class: 'btn btn-secondary' %>
