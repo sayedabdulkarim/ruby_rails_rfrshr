@@ -3,18 +3,27 @@
 <p><strong>Name:</strong>
   <%= @document.name %>
 </p>
+
 <p><strong>Doc Type:</strong>
   <%= @document.doc_type %>
 </p>
+
 <p><strong>Employee:</strong>
   <%= @document.employee_id %>
 </p>
-<p><strong>Created At:</strong>
-  <%= @document.created_at.strftime("%B %d, %Y") %>
-</p>
-<p><strong>Updated At:</strong>
-  <%= @document.updated_at.strftime("%B %d, %Y") %>
-</p>
 
-<%= link_to 'Edit Document' , edit_document_path(@document), class: 'btn btn-primary' %>
-  <%= link_to 'Back to Documents' , documents_path, class: 'btn btn-secondary' %>
+<% if @document.image.attached? %>
+  <p><strong>Image:</strong></p>
+  <%= image_tag @document.image, class: "img-thumbnail" %>
+    <% end %>
+
+      <p><strong>Created At:</strong>
+        <%= @document.created_at.strftime("%B %d, %Y") %>
+      </p>
+
+      <p><strong>Updated At:</strong>
+        <%= @document.updated_at.strftime("%B %d, %Y") %>
+      </p>
+
+      <%= link_to 'Edit Document' , edit_document_path(@document), class: 'btn btn-primary' %>
+        <%= link_to 'Back to Documents' , documents_path, class: 'btn btn-secondary' %>

@@ -27,6 +27,13 @@
                 <%= document.employee_id %>
               </td>
               <td>
+                <% if document.image.attached? %>
+                  <%= image_tag document.image.variant(resize: "100x100" ), class: "img-thumbnail" %>
+                    <% else %>
+                      <p>No Image Uploaded</p>
+                      <% end %>
+              </td>
+              <td>
                 <%= link_to 'Edit' , edit_document_path(document), class: 'btn btn-sm btn-primary' %>
               </td>
               <td>
