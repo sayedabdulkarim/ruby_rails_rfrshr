@@ -45,6 +45,10 @@
       <p><strong>Updated At:</strong>
         <%= document.updated_at.strftime("%B %d, %Y") %>
       </p>
+      <%= link_to 'View Document' , document_path(document), class: 'btn btn-success' %>
+        <%= link_to 'Edit Document' , edit_document_path(document), class: 'btn btn-primary' %>
+          <%= link_to 'Delete Document' , document_path(document), method: :delete, data: { confirm: 'Are you sure?' },
+            class: 'btn btn-danger' %>
     </div>
     <% end %>
 
